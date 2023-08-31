@@ -1,0 +1,24 @@
+.userinfo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap:  16px;
+    color: rgba(49, 48, 55, 1);
+    font-size: 16px;
+    font-weight: 600;
+    width: 236px;
+    height: 83px;
+    cursor: pointer;
+
+
+    &__initials {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 48px;
+        height: 48px;
+        border-radius: 2px;
+        color: #fff;
+        background:linear-gradient(137deg, #4D0AC7 0%, #912EF2 100%);
+    }
+}

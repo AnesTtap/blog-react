@@ -1,0 +1,26 @@
+.sign-up{
+    margin-top: 72px;
+
+    &__form{
+        margin: 72px auto 0;
+        width: 624px;
+        border: 1px splid #DADADA;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 40px;
+    
+        &-description{
+            text-align: center;
+            font-size: 16px;
+            align-items: center;
+            font-weight: 500;
+            color: #8D8E97;
+        }
+
+        &-link{
+            color: #2231aa;
+        }
+
+    }
+}
