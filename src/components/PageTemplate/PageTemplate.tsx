@@ -19,18 +19,13 @@ export const PageTemplate: FC<IPageTemplate> = ({children}) => {
 
     return (
         <>
-            <Header/>
+        <Header/>
             {<Container>
                 {children}
-            <Footer/>
-    </Container>}
+            
+            </Container>}
+        <Footer/>
     
-    <button onClick={handleToggleTheme}
-    style={ {   position:'fixed',
-                bottom: '10px',
-                right: 0}} >
-
-    toggle theme</button>
         </>
     )
 };

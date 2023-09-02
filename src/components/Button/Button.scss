@@ -5,18 +5,20 @@
     padding: 16px 32px;
     border-radius: 2px;
     cursor: pointer;
+    width: 100%;
 
     &.button--primary{
         color: #fff;
-        background-color: #2231aa;
+        background-color: #6C1BDB;
         
       &.active{
+        background-color: #912EF2;
         &:hover {
             opacity: 0.6;
         }
     }
       &.disabled {
-        background-color: #e8e8e8;
+        background-color: rgba(190, 190, 196, 0.1);
         cursor: not-allowed;
         color: #8d8e97;
     }
@@ -25,14 +27,14 @@
    
     &.button--secondary {
         color: #000;
-        background-color: #e8e8e8;
+        background-color: #aba4b4;
         &.active {
             &:hover {
-                background-color: #dadada;
+                background-color: #6e5d74;
             }
         }
         &.disabled {
-            background-color: #e8e8e8;
+            background-color: rgba(190, 190, 196, 0.1);
             cursor: not-allowed;
             color: #8d8e97;
         }
@@ -53,7 +55,7 @@
     }
 
     &.dark{
-        border: 1px solid #2231aa;
+        border: 1px solid #6C1BDB;
         
     }
 }

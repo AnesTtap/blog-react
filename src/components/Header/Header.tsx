@@ -5,6 +5,7 @@ import { UserInfo } from '../UserInfo/UserInfo';
 import { IconButton } from '../IconButton/IconButton';
 import search from '../../assets/icons/search.svg';
 import cancel from '../../assets/icons/cancel.svg';
+import { BurgerMenu } from '../BurgerMenu/BurgerMenu';
 
 
 export const Header: FC = () => {
@@ -21,9 +22,10 @@ export const Header: FC = () => {
     }
     return (
         <header className='header'>
-            <div className='logotip'>
+            <BurgerMenu/>
+           {/*} <div className='logotip'>
                 <img className='logotip-img' src={ logotip }alt='logotip'/>
-            </div>
+    </div>*/}
             {openSearch && (
                 <div className='header__search-input'>
                     <input
