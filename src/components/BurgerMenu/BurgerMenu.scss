@@ -1,5 +1,9 @@
 .burgerMenu{
-    
+    height: 84px;
+    display: flex;
+    background-color: #fff;
+    justify-content: space-between;
+    margin-bottom: 72px;
     cursor: pointer;
     
     &__logotip{
@@ -9,6 +13,10 @@
         margin: 20px 30px;
         cursor: pointer;
 
+}
+&__box{
+    display: flex;
+    align-items: center;
 }
 
     &__btn{
@@ -52,6 +60,27 @@
         top: 80px;
 
     }
+    
+    &__search-input{
+        width: 100%;
+        height: 100%;
+        padding: 0 15px;
+        
+        border: none;
+        color: rgba(49, 48, 55, 1);
+        
+        outline: none;
+
+
+        &::placeholder{
+            color: rgba(49, 48, 55, 1);
+            opacity: .5;
+
+        }
+    }
+    &__search-input{
+        flex: 1;
+    }
 
     &__nav-item{
         height: 83px;
@@ -78,76 +107,27 @@
     &__theme-box{
         height: 50px;
         display: flex;
-        justify-content: space-between;
-        border-top: 1px solid #E8E8E8;
-
+        justify-content: space-around;
     }
-
     &__theme-btn{
-        width: 100%;
-        border: none;
+        width: 50px;
+        border-radius: 50px;
         background: none;
         cursor: pointer;
+        border: 1px solid #bebebe;
 
         &:first-child{
-            border-right: 1px solid #E8E8E8;
+            box-shadow: inset;
         }
 
         &:disabled{
             cursor: auto;
             svg path {
-                fill: #DADADA;
+                fill: #b4b4b4;
             }
         }
     }
 }
-
-.burgerMenu{
-    height: 84px;
-    display: flex;
-    background-color: #fff;
-    justify-content: space-between;
-    margin-bottom: 72px;
-
-
-    &__box{
-        display: flex;
-        align-items: center;
-    }
-
-   
-
-    &__search-input{
-        width: 100%;
-        height: 100%;
-        padding: 0 15px;
-        
-        border: none;
-        color: rgba(49, 48, 55, 1);
-        
-        outline: none;
-
-
-        &::placeholder{
-            color: rgba(49, 48, 55, 1);
-            opacity: .5;
-
-        }
-    }
-    &__search-input{
-        flex: 1;
-    }
-
-}
-
-
-
-
-
-
-
-
-
 
 
 

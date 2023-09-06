@@ -5,18 +5,27 @@ import { PostList } from './components/PostList/PostList';
 import { cards } from '../../mock/cards';
 import { ICard } from '../../interfaces/ICard';
 import { getPosts } from '../../api/getPosts';
+import { getPostsAction } from '../../store/posts/actions';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
 
 
 
 
 
 export const BlogPage: FC = () => {
-    
-    return (
-        <div className='blog'>
-            <Typography content='Blog' type='H1'/>
-             <PostList/> 
-            </div>
+    const {posts,error,loading} = useAppSelector(state => state.posts);
+ const dispatch = useAppDispatch();
+     useEffect (() => {
        
-    )
-};
+         dispatch(getPostsAction());
+     },[dispatch])
+     return (
+         <div className='blog'>
+             <Typography content='Search results ‘Astronauts’' type='H1'/>
+            
+            
+             {posts && <PostList cards ={posts}/> }
+         </div>
+     )
+ };
+ 

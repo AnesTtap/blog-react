@@ -5,8 +5,11 @@ import './PostList.scss';
 import { ICard } from '../../../../interfaces/ICard';
 import { useNavigate } from 'react-router-dom';
 
+interface IPostList{
+    cards: ICard[];
+}
 
-export const PostList: FC = () => {
+export const PostList: FC<IPostList> = ({cards}) => {
     const navigate = useNavigate();
     const handleClick = (id : number) => {
         navigate(`/posts/${id}`)

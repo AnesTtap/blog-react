@@ -1,6 +1,5 @@
 import { FC, useState } from 'react';
 import './BurgerMenu.scss';
-import { useAppContext } from '../../contexts/AppContext';
 import { useNavigate } from 'react-router-dom';
 import logotip from '../../assets/icons/logotip.svg';
 import { Button } from '../Button/Button';
@@ -9,6 +8,9 @@ import { IconButton } from '../IconButton/IconButton';
 import search from '../../assets/icons/search.svg';
 import cancel from '../../assets/icons/cancel.svg';
 import { UserInfo } from '../UserInfo/UserInfo';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
+import { isDarktheme } from '../../store/theme/selectors';
+import { toggleThemeAction } from '../../store/theme/actions';
 
 
 
@@ -17,7 +19,9 @@ export const BurgerMenu: FC= () => {
    
         const [isOpen,setIsOpen] = useState(false); 
         const navigate = useNavigate();
-        const {toggleTheme, isDarkTheme} = useAppContext();
+        const dispatch = useAppDispatch();
+  
+    const isDark = useAppSelector(isDarktheme);
         
         const handleClick =() =>{
             if (isOpen) {
@@ -27,9 +31,6 @@ export const BurgerMenu: FC= () => {
             };
         }
         console.log(isOpen);
-        
-    
-        
         
         const handleGoTo = (url: string) => {
             navigate(url);
@@ -82,14 +83,14 @@ export const BurgerMenu: FC= () => {
                 <div>
                     <div className='burgerMenu__theme-box'>
                         <button className='burgerMenu__theme-btn'
-                        onClick={toggleTheme}
-                        disabled = {isDarkTheme()}>
+                        onClick={() => dispatch(toggleThemeAction())}
+                        disabled = {isDark}>
                             <DarkIcon/>
     
                         </button>
                         <button className='burgerMenu__theme-btn'
-                        onClick={toggleTheme}
-                        disabled = {!isDarkTheme()}
+                        onClick={() => dispatch(toggleThemeAction())}
+                        disabled = {!isDark}
                         >
                         <LightIcon/>
                         </button>

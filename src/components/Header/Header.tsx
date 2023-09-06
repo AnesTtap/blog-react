@@ -6,11 +6,15 @@ import { IconButton } from '../IconButton/IconButton';
 import search from '../../assets/icons/search.svg';
 import cancel from '../../assets/icons/cancel.svg';
 import { BurgerMenu } from '../BurgerMenu/BurgerMenu';
+import { useAppSelector } from '../../store/hooks';
+import { isDarktheme } from '../../store/theme/selectors';
 
 
 export const Header: FC = () => {
     const [openSearch, setOpenSearch] = useState(false);
     const [searchValue, SetSearchValue] = useState('');
+
+    const isDark = useAppSelector(isDarktheme);
 
     const handleTogggleClick = () => {
         setOpenSearch(!openSearch);//Открывает и закрывает поисковую строку
@@ -21,11 +25,9 @@ export const Header: FC = () => {
         SetSearchValue(newValue);
     }
     return (
+        <header className={`header-theme ${isDark ? 'dark' : 'light '}`}>
         <header className='header'>
             <BurgerMenu/>
-           {/*} <div className='logotip'>
-                <img className='logotip-img' src={ logotip }alt='logotip'/>
-    </div>*/}
             {openSearch && (
                 <div className='header__search-input'>
                     <input
@@ -48,6 +50,7 @@ export const Header: FC = () => {
                 </div>
                 <UserInfo username='Artem Malkin'/>
             </div>
+        </header>
         </header>
     )
 };
