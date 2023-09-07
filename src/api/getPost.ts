@@ -1,3 +1,4 @@
+import axios from "axios";
 import { urls } from "./urls";
 
 interface IgetPost {
@@ -5,7 +6,7 @@ interface IgetPost {
 }
 
 export const getPost = async ({ id} : IgetPost) => {
-    const response =await fetch(`${urls.GET_POST}/${id}`);
-    const data = await response.json();
+    const response =await axios.get(`${urls.GET_POST}/${id}`);
+    const data =  response.data;
     return data;
 }

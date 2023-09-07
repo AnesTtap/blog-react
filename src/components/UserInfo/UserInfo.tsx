@@ -5,6 +5,7 @@ import './UserInfo.scss';
  
  interface IUserInfo {
     username : string;
+    onClick?: () => void;
  
 }
 

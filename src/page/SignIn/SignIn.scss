@@ -4,11 +4,14 @@
     &__form{
         margin: 72px auto 0;
         width: 624px;
-        border: 1px splid #DADADA;
+        border: 1px solid #a1a1a162;
+        border-radius: 20px;
         padding: 40px;
         display: flex;
         flex-direction: column;
         row-gap: 40px;
+        background-color: #a1a1a162;
+
     
         &-description{
             text-align: center;
@@ -19,7 +22,7 @@
         }
 
         &-link{
-            color: #2231aa;
+            color: #5404c4;
         }
 
         &-forgot{

@@ -32,10 +32,6 @@ export const BurgerMenu: FC= () => {
         }
         console.log(isOpen);
         
-        const handleGoTo = (url: string) => {
-            navigate(url);
-            setIsOpen(false);
-        }
     
         const [openSearch, setOpenSearch] = useState(false);
     const [searchValue, SetSearchValue] = useState('');
@@ -49,6 +45,9 @@ export const BurgerMenu: FC= () => {
         SetSearchValue(newValue);
     }
         
+    const handleClickToSignIn = () => {
+        navigate ('/sign-in')
+    }
         return (
             <div className='burgerMenu'>
                <div className='burgerMenu__logotip'>
@@ -95,8 +94,8 @@ export const BurgerMenu: FC= () => {
                         <LightIcon/>
                         </button>
                     </div>
-                    <Button content='Log Out' 
-                    onClick={() => console.log('Log Out')}
+                    <Button content='Sign In' 
+                    onClick={handleClickToSignIn}
                     type='secondary'
                     />
                </div>

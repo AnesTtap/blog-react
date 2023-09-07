@@ -1,10 +1,11 @@
-import { GET_POSTS_ERROR, GET_POSTS_REQUEST, GET_POSTS_SUCCESS, } from "./actionsTypes";
+import {RESET_POST, GET_POSTS_ERROR, GET_POSTS_REQUEST, GET_POSTS_SUCCESS, } from "./actionsTypes";
 import { ActionType, IPostState } from "./interfaces";
 
 const initialState: IPostState = {
   posts: null,
   loading: false,
   error: null,
+  countPosts: 0,
 };
 
 export const postsReducer = (state = initialState, action: ActionType): IPostState => {
@@ -28,6 +29,8 @@ export const postsReducer = (state = initialState, action: ActionType): IPostSta
         loading: false,
         error: action.payload.error,
       };
+      case RESET_POST: 
+      return initialState
       
     default:
       return state;

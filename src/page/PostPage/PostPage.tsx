@@ -14,6 +14,7 @@ import { getPost } from '../../api/getPost';
 import { useParams } from 'react-router-dom';
 import { useAppSelector } from '../../store/hooks';
 import { isDarktheme } from '../../store/theme/selectors';
+import { ActionCard } from '../../components/ActionCard/ActionCard';
 
 export const PostPage: FC = () => {
     const { id} = useParams();
@@ -58,48 +59,9 @@ export const PostPage: FC = () => {
 
             
 
-            <div className='post__action'>
-                <div className='post__action-likes'>
-                    <button  className='btn_ss' onClick={() => console.log('Facebook')} >
-                    <a href="https://ru-ru.facebook.com/">
-                        <img src={facebook} alt='facebook'></img>
-                        </a>
-                    </button>
-                    <button  className='btn_ss' onClick={() => console.log('Twitter')}>
-                    <a href="https://twitter.com/i/flow/login">
-                        <img src={twitter} alt='twitter'></img>
-                    </a>
-                        
-                    </button>
-                    <IconButton onClick={ ()=>console.log('Menu')} withBackground>
-                        <img src={menu} alt='menu'/>
-                </IconButton>
-                    
-                </div>
         </div>
+        <ActionCard/>
 
-                <div className="post__transitions">
-            <IconButton onClick={() => console.log('arrowPrev')}>
-                <div className='post__transitions-box'>
-                    <img src={arrowPrev} alt='prev'/>
-                    <div className='post__transitions-text prev'>
-                        <div className={`post__transitions-titl  ${isDark && 'dark'}`}>Prev</div>
-                    </div>
-                </div>
-            </IconButton>
-
-            <IconButton onClick={() => console.log('arrowNext')}>
-                <div className='post__transitions-box'>
-                    <div className='post__transitions-text next'>
-                        <div className={`post__transitions-title ${isDark && 'dark'}`}>Next</div>
-                    </div>
-                    <img src={arrowNext} alt='next'/>
-                </div>
-            </IconButton>
-        </div>
-                
-            
-        </div>
         </>
         )}
        </div>

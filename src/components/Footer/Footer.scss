@@ -40,6 +40,10 @@
         &:first-child{
             box-shadow: inset;
         }
+        &:hover{
+            background-color: #1c56f567;
+        box-shadow: 0px 0px 8px 0px;
+        }
 
         &:disabled{
             cursor: auto;

@@ -1,18 +1,28 @@
-import { FC,useState } from 'react';
-import './Header.scss';
-import logotip from '../../assets/icons/logotip.svg';
+import { FC,useEffect,useState } from 'react';
 import { UserInfo } from '../UserInfo/UserInfo';
 import { IconButton } from '../IconButton/IconButton';
 import search from '../../assets/icons/search.svg';
 import cancel from '../../assets/icons/cancel.svg';
 import { BurgerMenu } from '../BurgerMenu/BurgerMenu';
-import { useAppSelector } from '../../store/hooks';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { isDarktheme } from '../../store/theme/selectors';
-
+import './Header.scss';
+import { useNavigate } from 'react-router-dom';
+import { getPostsAction, resetPostAction } from '../../store/posts/actions';
+;
 
 export const Header: FC = () => {
     const [openSearch, setOpenSearch] = useState(false);
     const [searchValue, SetSearchValue] = useState('');
+    const navigate = useNavigate();
+    const dispatch = useAppDispatch();
+
+    useEffect(() => {
+        if (openSearch) {
+            navigate('/search')
+        }
+         
+    }, [openSearch, navigate])
 
     const isDark = useAppSelector(isDarktheme);
 
@@ -21,9 +31,16 @@ export const Header: FC = () => {
         SetSearchValue('');//очищает поисковую строку
     }
 
-    const handleChangeSearch = (newValue:string) => {
-        SetSearchValue(newValue);
+    const handleChangeSearch = (searchValue:string) => {
+        SetSearchValue(searchValue);
+        if(searchValue) {
+            dispatch(getPostsAction({searchValue}))
+        }else {
+            dispatch(resetPostAction())
+        }
     }
+   
+
     return (
         <header className={`header-theme ${isDark ? 'dark' : 'light '}`}>
         <header className='header'>
@@ -33,7 +50,7 @@ export const Header: FC = () => {
                     <input
                     type='text'
                     className='header__search-input'
-                    placeholder='search...'
+                    placeholder='Search...'
                     value={searchValue}
                     onChange={(e) => handleChangeSearch(e.target.value)}/>
                 </div>

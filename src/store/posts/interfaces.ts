@@ -1,11 +1,12 @@
 import { type } from 'os';
 import {ICard } from '../../interfaces/ICard';
-import {GET_POSTS_ERROR, GET_POSTS_REQUEST, GET_POSTS_SUCCESS} from './actionsTypes';
+import {GET_POSTS_ERROR, GET_POSTS_REQUEST, GET_POSTS_SUCCESS, RESET_POST} from './actionsTypes';
 
 export interface IPostState {
     loading: boolean;
     posts: ICard[] | null;
     error: string | null;
+    countPosts: number;
 }
 
 export interface IGetPostsRequestAction{
@@ -26,4 +27,11 @@ export interface IGetPostsErrorAction {
 
     };
 }
-export type ActionType = IGetPostsRequestAction | IGetPostsSuccessAction | IGetPostsErrorAction;
+export interface IResetPostAction{
+    type: typeof RESET_POST;
+}
+export type ActionType =
+ IGetPostsRequestAction 
+ | IGetPostsSuccessAction 
+ | IGetPostsErrorAction
+ | IResetPostAction;

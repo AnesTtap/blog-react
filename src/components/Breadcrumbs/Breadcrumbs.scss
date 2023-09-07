@@ -1,10 +1,12 @@
 .breadcrumbs{
     margin-bottom: 32px;
+    
 
     &__link{
-        color: #313037;
+        color: #c011b1;
+        font-weight: 700;
         &:hover{
-            color: #5404c4;
+            color: #63095b;
 
         }
         &:not(:last-child):after{
@@ -13,7 +15,7 @@
     }
 
     &__text {
-        color: #8d8e97;
+        color: #61546e;
     }
 
     
