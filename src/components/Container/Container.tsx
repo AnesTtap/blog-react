@@ -1,8 +1,7 @@
 import { FC,ReactNode } from 'react';
-import './Container.scss';
 import { useAppSelector } from '../../store/hooks';
 import { isDarktheme } from '../../store/theme/selectors';
-
+import './Container.scss';
 
 interface IContainer {
     children: ReactNode;

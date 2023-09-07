@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import './Pagination.scss';
 import { LIMIT_POSTS } from '../../constants/limit';
+import './Pagination.scss';
 
 interface IPagination {
     countElement: number;

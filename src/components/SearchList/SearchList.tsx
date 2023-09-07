@@ -1,9 +1,8 @@
 import { FC } from 'react';
-import './SearchList.scss';
-import { cards } from '../../mock/cards';
 import { SearchCard } from '../SearchCard/SearchCard';
 import { ICard } from '../../interfaces/ICard';
 import { useNavigate } from 'react-router-dom';
+import './SearchList.scss';
 
 
 

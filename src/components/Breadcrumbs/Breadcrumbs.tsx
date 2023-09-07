@@ -1,7 +1,7 @@
 import { FC } from 'react';
-import './Breadcrumbs.scss';
 import { Link } from 'react-router-dom';
 import { cutText } from '../../utils/cutText';
+import './Breadcrumbs.scss';
 
 interface IPath{
     name:string;

@@ -1,18 +1,16 @@
 import { FC, useState } from 'react';
-import './BurgerMenu.scss';
 import { useNavigate } from 'react-router-dom';
-import logotip from '../../assets/icons/logotip.svg';
 import { Button } from '../Button/Button';
-import { DarkIcon, LightIcon } from '../../assets/icons/icons';
-import { IconButton } from '../IconButton/IconButton';
-import search from '../../assets/icons/search.svg';
-import cancel from '../../assets/icons/cancel.svg';
 import { UserInfo } from '../UserInfo/UserInfo';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { isDarktheme } from '../../store/theme/selectors';
 import { toggleThemeAction } from '../../store/theme/actions';
-
-
+import { DarkIcon, LightIcon } from '../../assets/icons/icons';
+import { IconButton } from '../IconButton/IconButton';
+import search from '../../assets/icons/search.svg';
+import logotip from '../../assets/icons/logotip.svg';
+import cancel from '../../assets/icons/cancel.svg';
+import './BurgerMenu.scss';
 
 
 export const BurgerMenu: FC= () => {

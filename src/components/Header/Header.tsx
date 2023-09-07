@@ -1,14 +1,14 @@
 import { FC,useEffect,useState } from 'react';
 import { UserInfo } from '../UserInfo/UserInfo';
 import { IconButton } from '../IconButton/IconButton';
+import { BurgerMenu } from '../BurgerMenu/BurgerMenu';
 import search from '../../assets/icons/search.svg';
 import cancel from '../../assets/icons/cancel.svg';
-import { BurgerMenu } from '../BurgerMenu/BurgerMenu';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { isDarktheme } from '../../store/theme/selectors';
-import './Header.scss';
 import { useNavigate } from 'react-router-dom';
 import { getPostsAction, resetPostAction } from '../../store/posts/actions';
+import './Header.scss';
 ;
 
 export const Header: FC = () => {

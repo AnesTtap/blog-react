@@ -1,10 +1,9 @@
 import { FC } from 'react';
-import './Footer.scss';
 import { isDarktheme } from '../../store/theme/selectors';
 import { toggleThemeAction } from '../../store/theme/actions';
 import { DarkIcon, LightIcon } from '../../assets/icons/icons';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
-
+import './Footer.scss';
 
 
 export const Footer: FC = () => {

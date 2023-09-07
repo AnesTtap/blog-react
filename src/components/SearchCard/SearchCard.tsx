@@ -1,7 +1,7 @@
 import { FC } from 'react';
-import './SearchCard.scss';
 import { DateCard } from '../DateCard/DateCard';
 import { Typography } from '../Typography/Typography';
+import './SearchCard.scss';
 
 
 interface ISearchCard {
